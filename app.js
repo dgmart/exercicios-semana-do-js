@@ -6,6 +6,8 @@
 */
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
+const oddNumbers = randomNumbers.filter(item => item % 2)
+console.info('Exercício 01\n# somente ímpares: ', oddNumbers)
 
 /*
   02
@@ -14,6 +16,8 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+const countNumbersLessThan501 = crazyNumbers.reduce((count, item) => item < 501 ? ++count : count, 0)
+console.info('Exercício 02\n# quantidade de números menores que 501: ', countNumbersLessThan501)
 
 /*
   03
@@ -23,6 +27,8 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+const squaredNumbers = numbers.map(number => Math.pow(number, 2))
+console.info('Exercício 03\n# números elevados ao quadrado: ', squaredNumbers)
 
 /*
   04
@@ -33,17 +39,19 @@ const numbers = [5, 7, 3]
 */
 
 const tarantinoMovies = [
-  { name: 'Bastardos inglórios', release: 2009 },
-  { name: 'Pulp Fiction', release: 1994 },
-  { name: 'Kill Bill: Volume 2', release: 2004 },
-  { name: 'Quatro Quartos', release: 1995 },
-  { name: 'Sin City', release: 2005 },
-  { name: 'Era uma Vez em... Hollywood', release: 2019 },
-  { name: 'Django Livre', release: 2012 },
-  { name: 'Cães de Aluguel', release: 1992 },
-  { name: 'À Prova de Morte', release: 2007 },
-  { name: 'Kill Bill: Volume 1', release: 2003 }
+    { name: 'Bastardos inglórios', release: 2009 },
+    { name: 'Pulp Fiction', release: 1994 },
+    { name: 'Kill Bill: Volume 2', release: 2004 },
+    { name: 'Quatro Quartos', release: 1995 },
+    { name: 'Sin City', release: 2005 },
+    { name: 'Era uma Vez em... Hollywood', release: 2019 },
+    { name: 'Django Livre', release: 2012 },
+    { name: 'Cães de Aluguel', release: 1992 },
+    { name: 'À Prova de Morte', release: 2007 },
+    { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
+const moviesBefore2000 = tarantinoMovies.filter(move => move.release < 2000)
+console.info('Exercício 04\n# filmes lançados antes do ano 2000: ', moviesBefore2000)
 
 /*
   05
@@ -53,14 +61,16 @@ const tarantinoMovies = [
 */
 
 const tvShows = [
-  { name: 'Breaking Bad', releaseYear: 2008 },
-  { name: 'Mr. Robot', releaseYear: 2015 },
-  { name: 'True Detective', releaseYear: 2014 },
-  { name: 'Hannibal', releaseYear: 2013 },
-  { name: 'The Handmaid\'s Tale', releaseYear: 2017 },
-  { name: 'House M.D.', releaseYear: 2004 },
-  { name: 'Watchmen', releaseYear: 2019 }
+    { name: 'Breaking Bad', releaseYear: 2008 },
+    { name: 'Mr. Robot', releaseYear: 2015 },
+    { name: 'True Detective', releaseYear: 2014 },
+    { name: 'Hannibal', releaseYear: 2013 },
+    { name: 'The Handmaid\'s Tale', releaseYear: 2017 },
+    { name: 'House M.D.', releaseYear: 2004 },
+    { name: 'Watchmen', releaseYear: 2019 }
 ]
+const tvShowNames = tvShows.map(tvShow => tvShow.name)
+console.info('Exercício 05\n# apenas nomes das séries: ', tvShowNames)
 
 /*
   06
@@ -74,12 +84,14 @@ const tvShows = [
 */
 
 const cart = [
-  { name: 'Dark Souls III', price: 95.03 },
-  { name: 'Shadow of the Tomb Raider', price: 101.19 },
-  { name: 'Sekiro: Shadows Die Twice', price: 179.99 },
-  { name: 'Resident Evil 2', price: 119.90 },
-  { name: 'Death Stranding', price: 149.99 }
+    { name: 'Dark Souls III', price: 95.03 },
+    { name: 'Shadow of the Tomb Raider', price: 101.19 },
+    { name: 'Sekiro: Shadows Die Twice', price: 179.99 },
+    { name: 'Resident Evil 2', price: 119.90 },
+    { name: 'Death Stranding', price: 149.99 }
 ]
+const gameNameList = cart.reduce((list, game) => `${list}\n - ${game.name}`, '')
+console.info('Exercício 06\n# lista com nomes de games: ', gameNameList)
 
 /*
   - Nome 1
