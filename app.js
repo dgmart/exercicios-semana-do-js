@@ -6,7 +6,10 @@
 */
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
-const oddNumbers = randomNumbers.filter(item => item % 2)
+
+// modulo de um número por 2 retorna 1 para ímpares e 0 para pares
+// sendo o número 1 truthy, e 0 falsy, não há necessidade de comparar com o operador `===`
+const oddNumbers = randomNumbers.filter(item => item % 2) 
 console.info('Exercício 01\n# somente ímpares: ', oddNumbers)
 
 /*
@@ -27,6 +30,9 @@ console.info('Exercício 02\n# quantidade de números menores que 501: ', countN
 */
 
 const numbers = [5, 7, 3]
+
+// operador de exponenciação alternativo à função usada
+// Math.pow(number, 2) === number ** 2
 const squaredNumbers = numbers.map(number => Math.pow(number, 2))
 console.info('Exercício 03\n# números elevados ao quadrado: ', squaredNumbers)
 
@@ -50,7 +56,9 @@ const tarantinoMovies = [
     { name: 'À Prova de Morte', release: 2007 },
     { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
-const moviesBefore2000 = tarantinoMovies.filter(move => move.release < 2000)
+
+// usando destructuring para a propriedade `release` do objeto
+const moviesBefore2000 = tarantinoMovies.filter(({ release }) => release < 2000)
 console.info('Exercício 04\n# filmes lançados antes do ano 2000: ', moviesBefore2000)
 
 /*
@@ -69,7 +77,9 @@ const tvShows = [
     { name: 'House M.D.', releaseYear: 2004 },
     { name: 'Watchmen', releaseYear: 2019 }
 ]
-const tvShowNames = tvShows.map(tvShow => tvShow.name)
+
+// usando destructuring para a propriedade `name` do objeto
+const tvShowNames = tvShows.map(({ name }) => name)
 console.info('Exercício 05\n# apenas nomes das séries: ', tvShowNames)
 
 /*
@@ -83,6 +93,12 @@ console.info('Exercício 05\n# apenas nomes das séries: ', tvShowNames)
   especial \n.
 */
 
+/*
+- Nome 1
+- Nome 2
+- Nome 3
+*/
+
 const cart = [
     { name: 'Dark Souls III', price: 95.03 },
     { name: 'Shadow of the Tomb Raider', price: 101.19 },
@@ -90,11 +106,7 @@ const cart = [
     { name: 'Resident Evil 2', price: 119.90 },
     { name: 'Death Stranding', price: 149.99 }
 ]
-const gameNameList = cart.reduce((list, game) => `${list}\n - ${game.name}`, '')
-console.info('Exercício 06\n# lista com nomes de games: ', gameNameList)
 
-/*
-  - Nome 1
-  - Nome 2
-  - Nome 3
-*/
+// usando destructuring para a propriedade `name` do objeto
+const gameNameList = cart.reduce((list, { name }) => `${list}\n - ${name}`, '')
+console.info('Exercício 06\n# lista com nomes de games: ', gameNameList)
